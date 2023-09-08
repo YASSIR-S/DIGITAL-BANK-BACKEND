@@ -14,13 +14,13 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE",length = 5)
 public abstract class BankAccount {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
 private String id;
 private double balance;
 private Date createdAt;
 private AccountStatus status;
 @ManyToOne
 private Customer customer;
-@OneToMany(mappedBy = "bankAccount",fetch = FetchType.LAZY)
+@OneToMany(mappedBy = "bankAccount" , fetch = FetchType.LAZY)
 private List<AccountOperation> accountOperations;
 }
