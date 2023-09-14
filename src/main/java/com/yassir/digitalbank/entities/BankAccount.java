@@ -21,6 +21,6 @@ private Date createdAt;
 private AccountStatus status;
 @ManyToOne
 private Customer customer;
-@OneToMany(mappedBy = "bankAccount" , fetch = FetchType.LAZY)
+@OneToMany(mappedBy = "bankAccount" , cascade = CascadeType.ALL, orphanRemoval = true)
 private List<AccountOperation> accountOperations;
 }

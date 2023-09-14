@@ -33,7 +33,7 @@ public class DigitalBankApplication {
     @Bean
     CommandLineRunner commandLineRunner(BankAccountService bankAccountService){
         return args -> {
-            Stream.of("Hassan","Imane","Mohamed").forEach(name->{
+            Stream.of("YASSIR","Imane","Mohamed").forEach(name->{
                 CustomerDTO customer=new CustomerDTO();
                 customer.setName(name);
                 customer.setEmail(name+"@gmail.com");
